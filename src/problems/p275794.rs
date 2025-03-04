@@ -41,15 +41,15 @@ pub fn main() {
         }
         (curr, gomrah, tahdid)
     }
-    let mut current_step = input.clone();
+    let mut current_step = input;
     let mut steps_details: Vec<(usize, usize)> = Vec::new();
     loop {
-        let (next_str, gomrah, found) = prcess_input(current_step.clone(), 0, 0, 0);
+        let (next_str, gomrah, tahdid) = prcess_input(current_step, 0, 0, 0);
         current_step = next_str;
-        if found == 0 && gomrah == 0 {
+        if tahdid == 0 && gomrah == 0 {
             break;
         }
-        steps_details.push((found, gomrah));
+        steps_details.push((tahdid, gomrah));
     }
     println!("{:?}", steps_details.len());
     steps_details
